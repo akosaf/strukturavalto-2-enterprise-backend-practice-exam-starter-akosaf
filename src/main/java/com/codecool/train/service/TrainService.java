@@ -5,6 +5,7 @@ import com.codecool.train.dto.TrainWagonDto;
 import com.codecool.train.entity.Train;
 import com.codecool.train.repository.TrainRepository;
 import com.codecool.train.repository.WagonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +14,10 @@ import java.util.stream.Collectors;
 @Service
 public class TrainService {
 
-    TrainRepository trainRepository;
-    WagonRepository wagonRepository;
+    private final TrainRepository trainRepository;
+    private final WagonRepository wagonRepository;
 
+    @Autowired
     public TrainService(TrainRepository trainRepository, WagonRepository wagonRepository) {
         this.trainRepository = trainRepository;
         this.wagonRepository = wagonRepository;

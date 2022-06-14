@@ -3,6 +3,7 @@ package com.codecool.train.controller;
 import com.codecool.train.dto.WagonDto;
 import com.codecool.train.entity.Wagon;
 import com.codecool.train.service.WagonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +12,9 @@ import java.util.List;
 @RequestMapping("wagon")
 public class WagonController {
 
-    WagonService wagonService;
+    private final WagonService wagonService;
 
+    @Autowired
     public WagonController(WagonService wagonService) {
         this.wagonService = wagonService;
     }

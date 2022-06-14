@@ -4,6 +4,7 @@ import com.codecool.train.dto.TrainDto;
 import com.codecool.train.dto.TrainWagonDto;
 import com.codecool.train.entity.Train;
 import com.codecool.train.service.TrainService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,8 +13,9 @@ import java.util.List;
 @RequestMapping("train")
 public class TrainController {
 
-    TrainService trainService;
+    private final TrainService trainService;
 
+    @Autowired
     public TrainController(TrainService trainService) {
         this.trainService = trainService;
     }

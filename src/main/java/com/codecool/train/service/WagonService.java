@@ -3,6 +3,7 @@ package com.codecool.train.service;
 import com.codecool.train.dto.WagonDto;
 import com.codecool.train.entity.Wagon;
 import com.codecool.train.repository.WagonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,8 +11,9 @@ import java.util.List;
 @Service
 public class WagonService {
 
-    WagonRepository wagonRepository;
+    private final WagonRepository wagonRepository;
 
+    @Autowired
     public WagonService(WagonRepository wagonRepository) {
         this.wagonRepository = wagonRepository;
     }
