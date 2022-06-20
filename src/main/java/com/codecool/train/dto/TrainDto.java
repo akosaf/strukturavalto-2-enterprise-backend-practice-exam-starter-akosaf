@@ -1,20 +1,16 @@
 package com.codecool.train.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "trains")
+@AllArgsConstructor
 public class TrainDto {
-    @Id
     private String id;
     private String driver;
     private String destination;
